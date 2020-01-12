@@ -27,7 +27,9 @@ then run it,
 or
 ``` npm run dev ```
 
+
 please don't hesitate to suggest more features into the boilerplate
 
 mail: it.moh.ou@gmail.com for any help.
 
+![NextJS Boilerplate](https://i.ibb.co/d6mjfv7/result.png)
