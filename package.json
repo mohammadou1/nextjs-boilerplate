@@ -1,0 +1,32 @@
+{
+  "name": "nextjs_boilerplate",
+  "version": "0.1.0",
+  "description": "NextJS boilerplate and starting template",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "demo": "next build && next start"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.1",
+    "js-cookies": "^1.0.4",
+    "next": "9.1.7",
+    "next-cookies": "^2.0.3",
+    "node-sass": "^4.13.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-ga": "^2.7.0",
+    "reactstrap": "^8.2.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "NextJS",
+    "NextJS Boilerplate",
+    "NextJS Starting Template",
+    "React SSR"
+  ],
+  "license": "MIT"
+}

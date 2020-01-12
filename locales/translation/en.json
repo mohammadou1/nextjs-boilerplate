@@ -1,0 +1,13 @@
+{
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact Us",
+  "lang_en": "English",
+  "lang_ar": "Arabic (العربية)",
+  "home meta description": "Home meta description example",
+  "home meta keywords": "NextJs, NextJs Boilerplate, NextJs startup template",
+  "home og description": "Home meta description example",
+  "about meta description": "Home meta description example",
+  "about meta keywords": "NextJs, NextJs Boilerplate, NextJs startup template",
+  "about og description": "Home meta description example"
+}
