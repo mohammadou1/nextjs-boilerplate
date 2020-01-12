@@ -1,5 +1,5 @@
 import { useRouter } from "next/dist/client/router";
-import { isAllowedLocale } from "./config";
+import { isAllowedLocale, localeCookiesAge } from "./config";
 import cookies from 'js-cookies';
 export const LocaleContext = React.createContext({
   locale: "en",
