@@ -11,6 +11,10 @@ login and logout functions to store token in the cookies.
 Reactstrap, Google Analytics, Layout, language switcher, locale next link component,
 documented meta component,scss and import from root implemented.
 
+not a big project but you can try it here
+
+Demo: https://boilerplate.itmohou.now.sh
+
 just clone the repo.
 
 ``` yarn ```
