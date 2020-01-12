@@ -6,9 +6,15 @@ import { Fragment } from "react";
 /**
  * @description Translate component which checks the existence of a key in locales files.
  */
-const Translate = ({ id, fallbackMessage, wrapperComponent }) => {
+const Translate = ({ id, fallbackMessage, wrapperComponent, lang }) => {
     const { translate } = useLocale();
-    const message = translate({ key: id, fallback: fallbackMessage })
+    let message;
+    if (lang) {
+        message = translate({ key: id, fallback: fallbackMessage, lang })
+    } else {
+        message = translate({ key: id, fallback: fallbackMessage })
+    }
+
     const Wrapper = wrapperComponent;
     if (!id) {
         throw new Error('id is required in translate component');
@@ -34,7 +40,9 @@ Translate.propTypes = {
     wrapperComponent: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.symbol
-    ])
+    ]),
+    // Returns translation of a specfic lang
+    lang: PropTypes.string
 }
 
 export default Translate;

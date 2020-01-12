@@ -1,4 +1,7 @@
 @import 'scss/variables.scss';
 .header{
     background-color: $primaryColor;
+    .navbar-brand{
+        color: black;
+    }
 }

@@ -9,5 +9,6 @@
   "home og description": "Home meta description example",
   "about meta description": "Home meta description example",
   "about meta keywords": "NextJs, NextJs Boilerplate, NextJs startup template",
-  "about og description": "Home meta description example"
+  "about og description": "Home meta description example",
+  "error_404":"Page not found. (404)"
 }

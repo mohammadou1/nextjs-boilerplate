@@ -1,20 +1,22 @@
 import App from "next/app";
-import { directions } from '../locales/translation';
 import { withLocale } from "~/locales";
-import Head from 'next/head';
 import Layout from "~/components/layout";
 import { Fragment } from "react";
-import { PUBLIC_URL, GOOGLE_ANALYTICS_UA } from '../env';
+import { GOOGLE_ANALYTICS_UA } from '../env';
 import { initGA } from "~/helpers/analytics";
+import { locales } from "~/locales/config";
+
 class MyApp extends App {
     static async getInitialProps(context) {
         const props = await App.getInitialProps(context);
-        const lang = context.ctx.query.lang;
+        const regex = new RegExp(`^/(${locales.join("|")})`);
+        const lang = context.ctx.asPath.match(regex) ? context.ctx.asPath.match(regex)[1] : context.ctx.query.lang;
         const path = context.ctx.asPath;
         return {
             ...props,
             lang,
             path,
+            query: context.ctx.query
         };
     }
     componentDidMount() {
@@ -28,8 +30,8 @@ class MyApp extends App {
         const { Component, pageProps, lang, path } = this.props;
         const WebLayout = path === '/' ? Fragment : Layout;
         return (
-            <WebLayout>
-                <Head>
+            <WebLayout >
+                {/* <Head>
                     // * If this imported locale has a direction inside directions object, 
                     // * it will import either rtl bootstrap or normal bootstrap
                     {directions[lang] === "rtl" ? (
@@ -38,7 +40,7 @@ class MyApp extends App {
                         (
                             <link type="text/css" rel="stylesheet" href={`${PUBLIC_URL}/bootstrap/bootstrap.min.css`} hrefLang={lang} />
                         )}
-                </Head>
+                </Head> */}
                 <Component   {...pageProps} />
             </WebLayout>
         );

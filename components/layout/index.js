@@ -1,5 +1,5 @@
-import Header from "./header"
-import Footer from "./footer"
+import Header from "./header";
+import Footer from "./footer";
 
 const Layout = ({ children }) => {
     return (<React.Fragment>
@@ -10,5 +10,4 @@ const Layout = ({ children }) => {
         <Footer />
     </React.Fragment>)
 }
-
 export default Layout;
