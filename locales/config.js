@@ -3,7 +3,8 @@ import cookies from "next-cookies";
 
 export const defaultLocale = "en";
 // in days
-export const localeCookiesAge = 7;
+const inDays = 365;
+export const localeCookiesAge = (60 * 60 * 24 * inDays);
 
 // * Defining active locales in the app
 // * even if you add more locales to translation folder, you need to add it to active locales
