@@ -12,7 +12,7 @@ export const LocaleProvider = ({ lang, children }) => {
   // store the preference
   React.useEffect(() => {
     if (locale !== cookies.getItem("locale")) {
-      cookies.setItem("locale", locale, localeCookiesAge);
+      cookies.setItem("locale", locale, localeCookiesAge,'/');
     }
   }, [locale]);
   // sync locale value on client-side route changes
