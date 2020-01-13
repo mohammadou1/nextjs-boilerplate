@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript, Html } from "next/document";
 import { directions } from '../locales/translation';
-import { defaultLocale, getInitialLocale } from '../locales/config';
+import {  getInitialLocale } from '../locales/config';
 import { PUBLIC_URL } from "~/env";
 
 // import Manifest from 'next-manifest/manifest';

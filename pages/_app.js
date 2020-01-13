@@ -26,7 +26,7 @@ class MyApp extends App {
     }
 
     render() {
-        const { Component, pageProps, lang, path } = this.props;
+        const { Component, pageProps, path } = this.props;
         const WebLayout = path === '/' ? Fragment : Layout;
         return (
             <WebLayout >
