@@ -1,20 +1,14 @@
 import Document, { Head, Main, NextScript, Html } from "next/document";
 import { directions } from '../locales/translation';
-import {  getInitialLocale } from '../locales/config';
+import { defaultLocale } from '../locales/config';
 import { PUBLIC_URL } from "~/env";
 
 // import Manifest from 'next-manifest/manifest';
 export default class NextDocument extends Document {
-    static async getInitialProps(ctx) {
-        const props = await Document.getInitialProps(ctx);
-        const lang = getInitialLocale(ctx);
-        return {
-            ...props,
-            lang
-        }
-    }
     render() {
-        const lang = this.props.lang;
+
+        const props = this.props.__NEXT_DATA__.props;
+        const lang = props ? props.lang : defaultLocale;
         return (
             <Html lang={lang} dir={directions[lang] || 'ltr'}>
                 <Head>
