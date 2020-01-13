@@ -4,13 +4,12 @@ import Layout from "~/components/layout";
 import { Fragment } from "react";
 import { GOOGLE_ANALYTICS_UA } from '../env';
 import { initGA } from "~/helpers/analytics";
-import { locales } from "~/locales/config";
+import { locales, getInitialLocale } from "~/locales/config";
 
 class MyApp extends App {
     static async getInitialProps(context) {
         const props = await App.getInitialProps(context);
-        const regex = new RegExp(`^/(${locales.join("|")})`);
-        const lang = context.ctx.asPath.match(regex) ? context.ctx.asPath.match(regex)[1] : context.ctx.query.lang;
+        const lang = getInitialLocale(context.ctx);
         const path = context.ctx.asPath;
         return {
             ...props,
