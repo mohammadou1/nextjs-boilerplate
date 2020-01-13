@@ -4,12 +4,14 @@ import Layout from "~/components/layout";
 import { Fragment } from "react";
 import { GOOGLE_ANALYTICS_UA } from '../env';
 import { initGA } from "~/helpers/analytics";
-import { getInitialLocale } from "~/locales/config";
+import { locales } from "~/locales/config";
 
 class MyApp extends App {
     static async getInitialProps(context) {
         const props = await App.getInitialProps(context);
-        const lang = getInitialLocale(context.ctx);
+        const regex = new RegExp(`^/(${locales.join("|")})`);
+        const match = context.ctx.asPath.match(regex);
+        const lang = match ? match[1] : context.ctx.query.lang;
         const path = context.ctx.asPath;
         return {
             ...props,
@@ -30,6 +32,16 @@ class MyApp extends App {
         const WebLayout = path === '/' ? Fragment : Layout;
         return (
             <WebLayout >
+                {/* <Head>
+                    // * If this imported locale has a direction inside directions object, 
+                    // * it will import either rtl bootstrap or normal bootstrap
+                    {directions[lang] === "rtl" ? (
+                        <link type="text/css" rel="stylesheet" href={`${PUBLIC_URL}/bootstrap/bootstrap-rtl.min.css`} hrefLang={lang} />
+                    ) :
+                        (
+                            <link type="text/css" rel="stylesheet" href={`${PUBLIC_URL}/bootstrap/bootstrap.min.css`} hrefLang={lang} />
+                        )}
+                </Head> */}
                 <Component   {...pageProps} />
             </WebLayout>
         );

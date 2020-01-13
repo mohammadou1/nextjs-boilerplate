@@ -23,7 +23,6 @@ export default WrappedPage => {
       pageProps = await WrappedPage.getInitialProps(ctx);
     }
 
-
     if (typeof pageProps.lang !== "string") {
       return { ...pageProps, locale: getInitialLocale(ctx) };
     }
